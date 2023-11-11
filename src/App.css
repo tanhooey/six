@@ -1,20 +1,73 @@
 .App {
-  text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
+.App-logo { 
+  position: absolute;
+  width: 400px;/* Adjust size as needed */
+  height: auto;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease;
+  opacity:0
+}
+.Typewriter-Text {
+  position: absolute;
+  top: 50%; /* Adjust as needed */
+  left: 50%; /* Adjust as needed */
+  transform: translate(-50%, -50%);
+  color: black; /* Choose the color that suits your design */
+  font-size: 20px; /* Adjust as needed */
+  /* More styling as needed */
+}
+.Letter-In {
+  position: fixed;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s ease;
+  opacity:1
+}
+
+.Letter-Out {
+  position: fixed;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s ease;
+  opacity:0;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .App-logo-fade-out {
+    animation: App-logo-spin infinite 1s linear;
+    animation-direction:alternate-reverse;
+    width: 400px;
+    height: auto;
+    transition: opacity 1s ease;
+    opacity: 0;
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo-fade-in {
+    animation: App-logo-spin infinite 1s linear;
+    animation-direction:alternate-reverse;
+    width: 400px;
+    height: auto;
+    transition: opacity 1s ease;
+    opacity: 1;
+  }
+}
+.App-logo-paused {
+  animation-play-state: paused;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: #608561;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +75,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 .App-link {
@@ -33,6 +87,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(20deg);
   }
 }
