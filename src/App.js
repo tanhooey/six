@@ -46,7 +46,6 @@ function App() {
               </div>
           </div>
           <div class="right-card">
-            Hello
           </div>
           <script src="./open-card.js"></script>
         </div>
