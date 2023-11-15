@@ -1,13 +1,21 @@
 import logo from './vecteezy_valentine-day-love-letter-envelope_22034135_962.png';
 import front from './card-front.png'
+import glassball from './glass-ball.png'
 import './App.css';
 import './styles.css'
-import React, { useState } from 'react';
+import './second_page.css'
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [imageVisible, setImageVisible] = useState(true);
   const [animationPaused, setAnimationPaused] = useState(false);
   const [openCard, setOpenCard] = useState(true);
+  const [isFaded, setIsFaded] = useState(false);
+  const [isDisplayed, setIsDisplayed] = useState(true);
+
+  const handleFade = () => {
+    setIsFaded(!isFaded); // Toggle the fade state
+  };
 
   const handleClick = () => {
     if (imageVisible && !animationPaused) {
@@ -18,14 +26,24 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    if (isFaded) {
+      const timer = setTimeout(() => {
+        setIsDisplayed(false);
+      }, 500); // assuming the transition duration is 500ms
+      return () => clearTimeout(timer);
+    } else {
+      setIsDisplayed(true);
+    }
+  }, [isFaded]);
+
   const handleCard = () => {
     setOpenCard(!openCard);
   }
 
   return (
-    <header className="App-header">
-      For you!
-      <div className="App" onClick={handleClick}>
+    <header className={`App-header ${isFaded ? 'faded' : ''}`}>
+      <div className="App" onClick={handleClick} style={{display: isDisplayed ? "block" : "none", opacity: isFaded ? 0 : 1, transition: "opacity .5s ease-out"}}>
         <img 
           src={logo} 
           className={`${imageVisible ? "App-logo-fade-in" : "App-logo-fade-out"} ${animationPaused ? "App-logo-paused" : ""}`} 
@@ -41,7 +59,7 @@ function App() {
                   <img src={front} alt="two worms looking at the sunset"/>
               </div>
               <div class="card-back">
-                <div class = "greeting"> Dear Cindy, </div>
+                <div class = "greeting"> Dear , </div>
                 <div class = "body of letter">
                  </div>
               </div>
@@ -49,15 +67,30 @@ function App() {
           <div class="right-card">
             <div class="body of letter">
             </div>
-            <div class="closing"><a target = "_blank" href="https://www.google.com"></a>Jason</div>
+            <div class="closing" onClick={handleFade}>Jason</div>
           </div>
           <script src="./open-card.js"></script>
         </div>
           
         </div>
       </div>
+      
+      <div class="second page" style={{display: !isDisplayed ? "block" : "none", opacity: isFaded ? 1 : 0, transition: "opacity .5s ease-out"}}>
+        <div class = "stars">
+          <div class = "glass-ball">
+              <img src={glassball} alt="a glass ball"/>
+            <div class = "note">
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* include logic for the second part of the webpage */}
+
     </header>
+    
+
   );
 }
 
 export default App;
+
