@@ -67,6 +67,7 @@
     opacity: 1;
     position: fixed;
     top:-35px;
+    left: 10px;
 }
 
 .right-card {

@@ -36,7 +36,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 1s ease;
+  transition: opacity 2s ease;
   opacity:0;
   pointer-events: none;
 }
@@ -47,7 +47,7 @@
     animation-direction:alternate-reverse;
     width: 400px;
     height: auto;
-    transition: opacity 1s ease;
+    transition: opacity 4s ease;
     opacity: 0;
   }
 }
@@ -58,7 +58,7 @@
     animation-direction:alternate-reverse;
     width: 400px;
     height: auto;
-    transition: opacity 1s ease;
+    transition: opacity 4s ease;
     opacity: 1;
   }
 }

@@ -42,10 +42,14 @@ function App() {
               </div>
               <div class="card-back">
                 <div class = "greeting"> Dear Cindy, </div>
-                <div class = "body of letter"><br></br>Happy SIX MONTHS worm! Time has really passed quickly. It's been 178 days since we rode that Amtrak together. </div>
+                <div class = "body of letter">
+                 </div>
               </div>
           </div>
           <div class="right-card">
+            <div class="body of letter">
+            </div>
+            <div class="closing">Jason</div>
           </div>
           <script src="./open-card.js"></script>
         </div>
