@@ -49,7 +49,7 @@ function App() {
           <div class="right-card">
             <div class="body of letter">
             </div>
-            <div class="closing">Jason</div>
+            <div class="closing"><a target = "_blank" href="https://www.google.com"></a>Jason</div>
           </div>
           <script src="./open-card.js"></script>
         </div>
