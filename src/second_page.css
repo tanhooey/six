@@ -1,0 +1,14 @@
+.glass-ball {
+    position:relative;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    align-items: flex-end; /* Aligns content to the bottom */
+    height: 100%; /* Ensure the parent has a defined height */
+}
+
+.glass-ball img {
+    width: 30% ;
+    margin-top: 45%;
+}
+
